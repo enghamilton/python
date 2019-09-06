@@ -1,8 +1,14 @@
-from flask import Flask
+"""Flask App Project."""
 
-app = Flask(__name__)
+from flask import Flask, jsonify
+hello = Flask(__name__)
+
 
 @app.route('/')
-def source():
- html = 'Hello World!'
- return html
+def index():
+    """Return homepage."""
+    json_data = {'Hello': 'World!'}
+    return jsonify(json_data)
+
+if __name__ == '__main__':
+    app.run()
