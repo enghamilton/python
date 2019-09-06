@@ -1,4 +1,4 @@
-htm==1.16
+html==1.16
 lxml==4.4.1
 openpyxl==2.4.9
 PyAutoGUI==0.9.36
