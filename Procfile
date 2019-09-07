@@ -1,1 +1,1 @@
-web:gunicorn hello:abyarapython
+web: gunicorn hello:app
