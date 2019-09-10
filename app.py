@@ -42,9 +42,8 @@ def main():
 
 @app.route('/')
 def source():
- html = 'Hello World!'
- 
- if __name__ == '__main__':
-    html = main()
+    if __name__ == '__main__':
+        main()
+    html = 'Hello World!' + result.content
  
  return html
