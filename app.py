@@ -7,7 +7,7 @@ from flask import Flask
 #USERNAME = "<username>"
 #PASSWORD = "<password>"
 USERNAME = "enghamilton"
-PASSWORD = "p4dcGj97"
+PASSWORD = "p4*****7"
 
 LOGIN_URL = "https://github.com/login"
 URL = "https://github.com/"
@@ -23,7 +23,7 @@ def main():
     # Create payload
     payload = {
         "username": USERNAME, 
-        "password": PASSWORD, 
+        "password": PASSWORD 
         #"csrfmiddlewaretoken": authenticity_token
     }
 
@@ -44,6 +44,6 @@ def main():
 def source():
     if __name__ == '__main__':
         main()
-    html = 'Hello World!' + result.content
+    html = 'Hello World python!' + result.content
  
  return html
