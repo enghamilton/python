@@ -47,3 +47,6 @@ def source():
   if __name__ == '__main__':
   html = main()
   return html
+
+if __name__ == "__main__":
+    app.run()
