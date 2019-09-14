@@ -5,37 +5,27 @@ from lxml import html
 from flask import Flask
 
 USERNAME = "enghamilton"
-PASSWORD = "*******7"
+#PASSWORD = "*******7"
+PASSWORD = "p4dcGj97"
 
 LOGIN_URL = "https://github.com/login"
 URL = "https://github.com/"
 
 def main():
-    session_requests = requests.session()
-
-    # Get login csrf token
-    result = session_requests.get(LOGIN_URL)
-    tree = html.fromstring(result.text)
+    #session_requests = requests.session()
 
     # Create payload
     payload = {
-        "username": USERNAME, 
+        "login": USERNAME, 
         "password": PASSWORD
     }
 
-    # Perform login
-    result = session_requests.post(LOGIN_URL, data = payload, headers = dict(referer = LOGIN_URL))
-
-    # Scrape url
-    result = session_requests.get(URL, headers = dict(referer = URL))
-    tree = html.fromstring(result.content)
-    bucket_names = tree.xpath("//span[@class='ver text here']/a/text()")
-
-    return (result.content)
-
-f = open("myscraped.txt", "w")
-f.write(main())
-f.close()		
+	#https ://pybit.es/requests-session.html
+    with requests.Session() as session:
+		post = session.post(LOGIN_URL, data=payload)
+		r = session.get(URL)
+    
+    return (r.content)	
 
 if __name__ == '__main__':
     main()
@@ -48,5 +38,8 @@ def source():
   html = main()
   return html
 
-if __name__ == "__main__":
-    app.run()
+@app.route('/login')
+def login():
+  return main()
+
+app.run()
