@@ -6,7 +6,6 @@ from flask import Flask
 
 USERNAME = "enghamilton"
 #PASSWORD = "*******7"
-PASSWORD = "p4dcGj97"
 
 LOGIN_URL = "https://github.com/login"
 URL = "https://github.com/"
